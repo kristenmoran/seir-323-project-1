@@ -8,8 +8,20 @@ const openModalBtn = document.querySelector('#openModal');
 const closeModalBtn = document.querySelector('#closeModal');
 
 //Questions Board
-const questionsBoard = document.querySelector('.question-board');
-const questionDisplay = document.querySelector('.question-display');
+let questionsBoard = document.querySelector('.question-board');
+let questionDisplay = document.querySelector('.question-display');
+let answerDisplay = document.querySelector('.answer-display');
+
+//Styling Attributes
+questionDisplay.setAttribute(
+	'style',
+	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding-top: 10px"
+);
+
+answerDisplay.setAttribute(
+	'style',
+	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: left; padding: 10px; margin-left: 10px"
+);
 
 //Music Category
 const music = document.querySelector('#music');
@@ -17,23 +29,21 @@ const music = document.querySelector('#music');
 const musicQuestions = [
 	{
 		question: '1. Who composed the Four Seasons?',
-		choiceA: 'A. Wolfgang Amadeus Mozart',
-		choiceB: 'B. Johann Sebastian Bach',
-		choiceC: 'C. Antonio Vivaldi',
+		options: [
+			'A. Wolfgang Amadeus Mozart',
+			'B. Johann Sebastian Bach',
+			'C. Antonio Vivaldi',
+		],
 		correctAnswer: 'C',
 	},
 	{
 		question: '2. What year was Abbey Road released?',
-		choiceA: 'A. 1971',
-		choiceB: 'B. 1969',
-		choiceC: 'C. 1967',
+		options: ['A. 1971', 'B. 1969', 'C. 1967'],
 		correctAnswer: 'B',
 	},
 	{
 		question: "3. What is Elton John's best selling single?",
-		choiceA: 'A. Your Song',
-		choiceB: 'B. Candle in the Wind',
-		choiceC: 'C. Rocket Man',
+		options: ['A. Your Song', 'B. Candle in the Wind', 'C. Rocket Man'],
 		correctAnswer: 'B',
 	},
 ];
@@ -45,7 +55,9 @@ openModalBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 
 //Music Category
-music.addEventListener('click', renderMusicQuestions);
+music.addEventListener('click', startGame);
+
+//Trivia Logic
 
 //FUNCTIONS
 
@@ -59,36 +71,46 @@ function closeModal() {
 }
 
 //Music Category
-function renderMusicQuestions(event) {
-	event.target;
-	// console.log('clicked');
+function startGame() {
+	//display the board
 	questionsBoard.style.display = 'block';
-	questionDisplay.style.fontFamily = 'Cabin, sans-serif';
-	questionDisplay.style.fontSize = '26px';
-	questionDisplay.style.textAlign = 'center';
-	//display 1 question and choices
-	// let questions = Object.values(musicQuestions[0]);
-	// console.log(questions);
-	questionDisplay.innerHTML = Object.values(musicQuestions[0]);
+	//render the first question
+	let firstQuestion = musicQuestions[0].question;
+	questionDisplay.innerHTML = firstQuestion;
+	//render the choices
+	let choices = musicQuestions[0].options;
+    answerDisplay.innerHTML = choices;
+    
+    //make choices their own buttons
+    
+
+	console.log(firstQuestion);
+	console.log(choices);
+	// for(i = 0; i < choices.length; i++) {
+	//     let choicesBtns = document.createElement('button');
+	//     choicesBtns.appendChild(answerDisplay);
+	//     console.log(choicesBtns);
+	//     // choicesBtns.addEventListener('click', checkAnswers);
+	// }
+	// for(let i = 0; i < choices; i++) {
+	//     let newBtns = document.createElement('button')
+	//     console.log(newBtns);
+	// }
+	displayNextQuestion();
 }
 
-// function displayNextQuestion() {
-// for (let i = 0; i < musicQuestions.length - 1; i++) {
-//     console.log(i);
-//     //after choice is made say if it is correct
-//     let playAnswer = musicQuestions[i].correctAnswer;
-//     if (playAnswer === musicQuestions[i].correctAnswer) {
-//         console.log('correct');
-//     } else {
-//         //or not correct
-//         console.log('incorrect');
-//     }
-// }
-// }
+function displayNextQuestion() {
+	// for (let i = 0; i < musicQuestions.length - 1; i++) {
+	//     console.log(i);
+	//     //after choice is made say if it is correct
+	//     let playAnswer = musicQuestions[i].correctAnswer;
+	//     if (playAnswer === musicQuestions[i].correctAnswer) {
+	//         console.log('correct');
+	//     } else {
+	//         //or not correct
+	//         console.log('incorrect');
+	//     }
+	// }
+}
 
-// let questions = document.createElement('div');
-// console.log('made div');
-// questions.innerHTML = "questions.musicQuestions"
-// //go to next question
-// //repeat for question 2 and 3
-// //exit the game
+// return to home
