@@ -48,6 +48,13 @@ button {
 	background-color: #8aa29e;
 }
 
+.question-board {
+    display: none;
+    border: #8aa29e solid 2px;
+    margin: auto;
+    width: 500px;
+}
+
 #openModal {
 	font-size: 20px;
 }
