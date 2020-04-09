@@ -67,19 +67,24 @@ function renderMusicQuestions(event) {
 	questionDisplay.style.fontSize = '26px';
 	questionDisplay.style.textAlign = 'center';
 	//display 1 question and choices
-	questionDisplay.innerHTML = musicQuestions[0].question;
-	for (let i = 0; i < musicQuestions.length - 1; i++) {
-		console.log(i);
-		//after choice is made say if it is correct
-		let playAnswer = musicQuestions[i].correctAnswer;
-		if (playAnswer === musicQuestions[i].correctAnswer) {
-			console.log('correct');
-		} else {
-			//or not correct
-			console.log('incorrect');
-		}
-	}
+	// let questions = Object.values(musicQuestions[0]);
+	// console.log(questions);
+	questionDisplay.innerHTML = Object.values(musicQuestions[0]);
 }
+
+// function displayNextQuestion() {
+// for (let i = 0; i < musicQuestions.length - 1; i++) {
+//     console.log(i);
+//     //after choice is made say if it is correct
+//     let playAnswer = musicQuestions[i].correctAnswer;
+//     if (playAnswer === musicQuestions[i].correctAnswer) {
+//         console.log('correct');
+//     } else {
+//         //or not correct
+//         console.log('incorrect');
+//     }
+// }
+// }
 
 // let questions = document.createElement('div');
 // console.log('made div');
