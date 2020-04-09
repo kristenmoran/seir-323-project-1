@@ -3,10 +3,32 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cabin&family=Source+Sans+Pro&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="styles.css" />
 		<title>Trivia</title>
 	</head>
 	<body>
+		<h1>Test Your Knowledge</h1>
+		<h2>Categories</h2>
+        <button class="modal-buttons" id="openModal">How to Play</button>
+		<div id="modal-instructions">
+            <div id="instructions-text">
+                <h1>Let's get Quizzical</h1>
+                <p>Choose from multiple categories and see if you know your stuff.</p>
+                <ol>
+                    <li>Select a category.</li>
+                    <li>Pick your answer.</li>
+                    <li>Go to the next question.</li>
+                    <li>Brag to your friends about how big your brain is.</li>
+                </ol>
+                <div id="modal-footer">
+                <a class="modal-buttons" id="closeModal" href="#">Close</a>
+                </div>
+            </div>
+		</div>
 		<script src="app.js"></script>
 	</body>
 </html>
