@@ -3,17 +3,20 @@ console.log('js is up and running');
 //TARGET DATA
 
 //Modal
-const modal = document.querySelector('#modal-instructions');
+const modalContainer = document.querySelector('#modal-container');
 const openModalBtn = document.querySelector('#openModal');
 const closeModalBtn = document.querySelector('#closeModal');
 
 //Questions Board
-let questionsBoard = document.querySelector('.question-board');
-let questionDisplay = document.querySelector('.question-display');
-let answerDisplay = document.querySelector('.answer-display');
+// let triviaModal = document.querySelector('.trivia-modal')
+let questionsContainer = document.querySelector('#question-container');
+//the modal is below
+let questionDisplay = document.querySelector('#question-display');
+let answerBtns = document.querySelector('#answer-buttons');
 
 //Trivia Game Logic
 let currentQuestionIndex = 0;
+let nextButton = document.querySelector('#next');
 
 //Styling Attributes
 questionDisplay.setAttribute(
@@ -21,10 +24,10 @@ questionDisplay.setAttribute(
 	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding-top: 10px"
 );
 
-// answerDisplay.setAttribute(
-// 	'style',
-// 	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: left; padding: 10px; margin-left: 10px"
-// );
+answerBtns.setAttribute(
+	'style',
+	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding: 10px; margin-left: 10px"
+);
 
 //Music Category
 const music = document.querySelector('#music');
@@ -67,52 +70,69 @@ let score = 0;
 
 //Modal
 function openModal() {
-	modal.style.display = 'block';
+	modalContainer.style.display = 'block';
 }
 
 function closeModal() {
-	modal.style.display = 'none';
+	modalContainer.style.display = 'none';
 }
 
 //Music Category
+
+// function startGame() {
+// 	// display the board
+// 	questionsBoard.style.display = 'block';
+// 	// //render the first question
+// 	let firstQuestion = musicQuestions[0].question;
+// 	questionDisplay.innerHTML = firstQuestion;
+// 	// //render the choices
+// 	// let choices = musicQuestions[0].options;
+// 	// answerDisplay.innerHTML = choices;
+// 	let choices = musicQuestions[0].options;
+// 	answerDisplay.innerHeight = choices;
+// 	console.log(choices);
+// 	// for (let i = 0; i < musicQuestions.length; i++) {
+// 	// 	let currentQuestion = musicQuestions[i].question;
+// 	// 	// if (userInput == musicQuestions[i].correctAnswer) {
+// 	// 	//     score ++;
+// 	// 	//     console.log('correct');
+// 	// 	// } else {
+// 	// 	// 	console.log('incorrect');
+// 	// 	// }
+// 	// 	console.log(currentQuestion);
+// 	// }
+// 	// console.log(score);
+
+// 	// console.log(choices);
+// 	displayNextQuestion();
+// }
+
 function startGame() {
-	// display the board
-	questionsBoard.style.display = 'block';
-	// //render the first question
-	let firstQuestion = musicQuestions[0].question;
-	questionDisplay.innerHTML = firstQuestion;
-	// //render the choices
-	// let choices = musicQuestions[0].options;
-	// answerDisplay.innerHTML = choices;
-
-	for (let i = 0; i < musicQuestions.length; i++) {
-		let currentQuestion = musicQuestions[i].question;
-		// if (userInput == musicQuestions[i].correctAnswer) {
-		//     score ++;
-		//     console.log('correct');
-		// } else {
-		// 	console.log('incorrect');
-		// }
-		console.log(currentQuestion);
-	}
-	console.log(score);
-
-	// console.log(choices);
+	questionsContainer.style.display = 'block';
+	currentQuestionIndex;
+	console.log(currentQuestionIndex);
 	displayNextQuestion();
 }
 
+// for (let i = 0; i < musicQuestions.length; i++) {
+// 	console.log(i);
+// }
+
 function displayNextQuestion() {
-	// for (let i = 0; i < musicQuestions.length - 1; i++) {
-	//     console.log(i);
-	//     //after choice is made say if it is correct
-	//     let playAnswer = musicQuestions[i].correctAnswer;
-	//     if (playAnswer === musicQuestions[i].correctAnswer) {
-	//         console.log('correct');
-	//     } else {
-	//         //or not correct
-	//         console.log('incorrect');
-	//     }
-	// }
+	//code goes here
+	console.log('next question!');
 }
 
 // return to home
+
+// for (let i = 0; i < musicQuestions.length - 1; i++) {
+//     console.log(i);
+//     //after choice is made say if it is correct
+//     let playAnswer = musicQuestions[i].correctAnswer;
+//     if (playAnswer === musicQuestions[i].correctAnswer) {
+//         console.log('correct');
+//     } else {
+//         //or not correct
+//         console.log('incorrect');
+//     }
+// }

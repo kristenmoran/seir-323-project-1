@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cabin&family=Source+Sans+Pro&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Trivia</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Source+Sans+Pro&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Trivia</title>
-</head>
-
-<body>
-    <h1>Test Your Knowledge</h1>
-    <h2>Select a Category</h2>
-    <button class="modal-buttons" id="openModal">How to Play</button>
-    <section class="category-arena">
-        <div class="categories" id="music">Music</div>
-        <div class="categories" id="sports">Sports</div>
-        <div class="categories" id="art">Art</div>
-        <div class="categories" id="history">History</div>
-        <div class="categories" id="science">Science</div>
-        <div class="categories" id="pop-culture">Pop! Culture</div>
-        </div>
-    </section>
-    <div id="modal-instructions">
-        <div id="instructions-text">
-            <h1>Let's get Quizzical</h1>
-            <p>Choose from multiple categories and see if you know your stuff.</p>
-            <ol>
-                <li>Select a category.</li>
-                <li>Pick your answer.</li>
-                <li>Go to the next question.</li>
-                <li>Brag to your friends about how big your brain is.</li>
-            </ol>
-            <div id="modal-footer">
-                <a class="modal-buttons" id="closeModal" href="#">Close</a>
-            </div>
-        </div>
-    </div>
-    <div class="question-board">
-        <div class="question-display"></div>
-        <div class="answer-display"></div>
-    </div>
-    <script src="app.js"></script>
-</body>
-
+	<body>
+		<h1>Test Your Knowledge</h1>
+		<h2>Select a Category</h2>
+		<button class="modal-buttons" id="openModal">How to Play</button>
+		<div class="category-arena">
+			<div class="categories" id="music">Music</div>
+			<div class="categories" id="sports">Sports</div>
+			<div class="categories" id="art">Art</div>
+			<div class="categories" id="history">History</div>
+			<div class="categories" id="science">Science</div>
+			<div class="categories" id="pop-culture">Pop! Culture</div>
+		</div>
+		<div id="modal-container">
+			<div id="instructions-text">
+				<h1>Let's get Quizzical</h1>
+				<p>Choose from multiple categories and see if you know your stuff.</p>
+				<ol>
+					<li>Select a category.</li>
+					<li>Pick your answer.</li>
+					<li>Go to the next question.</li>
+					<li>Brag to your friends about how big your brain is.</li>
+				</ol>
+				<div id="modal-footer">
+					<a class="modal-buttons" id="closeModal" href="#">Close</a>
+				</div>
+			</div>
+		</div>
+		<div class="trivia-modal">
+			<div id="question-container">
+				<div id="question-display">Question</div>
+				<div id="answer-buttons">
+					<button class="btn" id="choiceA">A</button>
+					<button class="btn" id="choiceB">B</button>
+					<button class="btn" id="choiceC">C</button>
+                    <button class="btn" id="choiceD">D</button>
+					<button class="btn" id="next">Next</button>
+				</div>
+			</div>
+		</div>
+		<script src="app.js"></script>
+	</body>
 </html>
