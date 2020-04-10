@@ -89,7 +89,10 @@ button {
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 	margin: 150px auto;
-	line-height: 120%;
+    line-height: 120%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .btn {

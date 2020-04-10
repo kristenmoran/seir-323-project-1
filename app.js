@@ -14,14 +14,10 @@ let questionsContainer = document.querySelector('#question-container');
 let questionDisplay = document.querySelector('#question-display');
 let answerBtns = document.querySelector('#answer-buttons');
 
-//Trivia Game Logic
-let currentQuestionIndex = 0;
-let nextButton = document.querySelector('#next');
-
 //Styling Attributes
 questionDisplay.setAttribute(
 	'style',
-	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding-top: 10px"
+	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding-top: 30px"
 );
 
 answerBtns.setAttribute(
@@ -32,27 +28,39 @@ answerBtns.setAttribute(
 //Music Category
 const music = document.querySelector('#music');
 //Objects in an array to hold the questions and answers
-const musicQuestions = [
+let musicQuestions = [
 	{
 		question: '1. Who composed the Four Seasons?',
-		options: [
-			'A. Wolfgang Amadeus Mozart',
-			'B. Johann Sebastian Bach',
-			'C. Antonio Vivaldi',
-		],
+		choiceA: 'A. Wolfgang Amadeus Mozart',
+		choiceB: 'B. Johann Sebastian Bach',
+		choiceC: 'C. Antonio Vivaldi',
 		correctAnswer: 'C',
 	},
 	{
 		question: '2. What year was Abbey Road released?',
-		options: ['A. 1971', 'B. 1969', 'C. 1967'],
+		choiceA: 'A. 1971',
+		choiceB: 'B. 1969',
+		choiceC: 'C. 1967',
 		correctAnswer: 'B',
 	},
 	{
 		question: "3. What is Elton John's best selling single?",
-		options: ['A. Your Song', 'B. Candle in the Wind', 'C. Rocket Man'],
+		choiceA: 'A. Your Song',
+		choiceB: 'B. Candle in the Wind',
+		choiceC: 'C. Rocket Man',
 		correctAnswer: 'B',
 	},
 ];
+
+//Trivia Game Logic
+//minus one because I don't want to display the correct answer
+let previousQuestionIndex = musicQuestions.length - 1;
+let currentQuestionIndex = 0;
+let score = 0;
+// let nextButton = document.querySelector('#next');
+let choiceABtn = document.querySelector('#choiceA');
+let choiceBBtn = document.querySelector('#choiceB');
+let choiceCBtn = document.querySelector('#choiceC');
 
 //EVENT LISTENERS
 
@@ -64,7 +72,9 @@ closeModalBtn.addEventListener('click', closeModal);
 music.addEventListener('click', startGame);
 
 //Trivia Logic
-let score = 0;
+choiceABtn.addEventListener('click', checkAnswer);
+choiceBBtn.addEventListener('click', checkAnswer);
+choiceCBtn.addEventListener('click', checkAnswer);
 
 //FUNCTIONS
 
@@ -79,51 +89,69 @@ function closeModal() {
 
 //Music Category
 
-// function startGame() {
-// 	// display the board
-// 	questionsBoard.style.display = 'block';
-// 	// //render the first question
-// 	let firstQuestion = musicQuestions[0].question;
-// 	questionDisplay.innerHTML = firstQuestion;
-// 	// //render the choices
-// 	// let choices = musicQuestions[0].options;
-// 	// answerDisplay.innerHTML = choices;
-// 	let choices = musicQuestions[0].options;
-// 	answerDisplay.innerHeight = choices;
-// 	console.log(choices);
-// 	// for (let i = 0; i < musicQuestions.length; i++) {
-// 	// 	let currentQuestion = musicQuestions[i].question;
-// 	// 	// if (userInput == musicQuestions[i].correctAnswer) {
-// 	// 	//     score ++;
-// 	// 	//     console.log('correct');
-// 	// 	// } else {
-// 	// 	// 	console.log('incorrect');
-// 	// 	// }
-// 	// 	console.log(currentQuestion);
-// 	// }
-// 	// console.log(score);
-
-// 	// console.log(choices);
-// 	displayNextQuestion();
-// }
-
 function startGame() {
 	questionsContainer.style.display = 'block';
 	currentQuestionIndex;
 	console.log(currentQuestionIndex);
-	displayNextQuestion();
+	displayFirstQuestion();
 }
 
 // for (let i = 0; i < musicQuestions.length; i++) {
 // 	console.log(i);
 // }
 
-function displayNextQuestion() {
-	//code goes here
-	console.log('next question!');
+function displayFirstQuestion() {
+	//first question
+	let firstQuestion = musicQuestions[currentQuestionIndex];
+	questionDisplay.innerHTML = firstQuestion.question;
+	choiceA.innerHTML = firstQuestion.choiceA;
+	choiceB.innerHTML = firstQuestion.choiceB;
+	choiceC.innerHTML = firstQuestion.choiceC;
+	displaySecondQuestion();
+	console.log(currentQuestionIndex);
+	//display question
 }
 
+function checkAnswer(answer) {
+	if (musicQuestions[currentQuestionIndex].correctAnswer === answer) {
+		//answer is correct
+		alert('correct!');
+		console.log('correct');
+		currentQuestionIndex++;
+		displaySecondQuestion();
+	} else {
+		alert('incorrect');
+		console.log('incorrect!');
+		currentQuestionIndex++;
+		displaySecondQuestion();
+		//answer is wrong
+	}
+}
+
+function displaySecondQuestion() {
+	console.log('next question!');
+	let secondQuestion = musicQuestions[currentQuestionIndex];
+	questionDisplay.innerHTML = secondQuestion.question;
+	choiceA.innerHTML = secondQuestion.choiceA;
+	choiceB.innerHTML = secondQuestion.choiceB;
+	choiceC.innerHTML = secondQuestion.choiceC;
+	// currentQuestionIndex++;
+	// displayThirdQuestion();
+}
+
+// function displayThirdQuestion() {
+// 	let thirdQuestion = musicQuestions[currentQuestionIndex];
+// 	questionDisplay.innerHTML = thirdQuestion.question;
+// 	choiceA.innerHTML = thirdQuestion.choiceA;
+// 	choiceB.innerHTML = thirdQuestion.choiceB;
+// 	choiceC.innerHTML = thirdQuestion.choiceC;
+// 	returnToHomePage();
+// }
+
 // return to home
+function returnToHomePage() {
+	//code for return to category homepage
+}
 
 // for (let i = 0; i < musicQuestions.length - 1; i++) {
 //     console.log(i);
