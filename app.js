@@ -17,12 +17,12 @@ let answerBtns = document.querySelector('#answer-buttons');
 //Styling Attributes
 questionDisplay.setAttribute(
 	'style',
-	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding-top: 30px"
+	"font-family: 'Cabin', sans-serif; font-size: 30px; text-align: center; padding-top: 30px"
 );
 
 answerBtns.setAttribute(
 	'style',
-	"font-family: 'Cabin', sans-serif; font-size: 26px; text-align: center; padding: 10px; margin-left: 10px"
+	'text-align: center; padding: 10px; margin-left: 10px; margin-top: -530px;'
 );
 
 //Music Category
@@ -92,7 +92,6 @@ function closeModal() {
 function startGame() {
 	questionsContainer.style.display = 'block';
 	currentQuestionIndex;
-	console.log(currentQuestionIndex);
 	displayQuestion();
 }
 
@@ -112,7 +111,7 @@ function displayQuestion() {
 }
 
 function checkAnswer(event) {
-	console.log(event.target);
+	//targeting the event and id from HTML
 	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
 		alert('correct!');

@@ -49,7 +49,7 @@ button {
 }
 
 .categories:hover {
-	color: white;
+	color: #fafafa;
 	background-color: #8aa29e;
 }
 
@@ -84,7 +84,7 @@ button {
 	background-color: #e3f2fd;
 	font-family: 'Source Sans Pro', sans-serif;
 	height: 450px;
-	width: 550px;
+	width: 600px;
 	border-radius: 2px;
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 	padding: 10px;
@@ -97,7 +97,7 @@ button {
 
 .btn {
     padding: 15px 18px;
-    margin: auto;
+    margin: 25px, auto;
 	background-color: #db5461;
 	border: none;
 	outline: none;
@@ -106,9 +106,17 @@ button {
 	font-family: 'Source Sans Pro', sans-serif;
 	cursor: pointer;
     text-decoration: none;
-    display: inline;
-	font-size: 15px;
+	font-size: 26px;
+	flex-wrap: nowrap; 
+	flex-direction: column;
 }
+
+.btn:hover {
+	color: #fafafa;
+	background-color: #8aa29e;
+}
+
+/* Modal styling */
 
 #openModal {
 	font-size: 20px;
@@ -131,7 +139,8 @@ button {
 #instructions-text {
 	background-color: #e3f2fd;
 	font-family: 'Source Sans Pro', sans-serif;
-	height: 250px;
+	font-size: 20px;
+	height: 300px;
 	width: 550px;
 	border-radius: 2px;
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
