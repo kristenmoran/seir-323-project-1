@@ -115,12 +115,10 @@ function checkAnswer(event) {
 	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
 		alert('correct!');
-		console.log(musicQuestions[currentQuestionIndex].correctAnswer);
 		// displaySecondQuestion();
 	} else {
 		//answer is wrong
 		alert('incorrect');
-		console.log('incorrect!');
 	}
 	if (currentQuestionIndex < previousQuestionIndex) {
 		currentQuestionIndex++;
