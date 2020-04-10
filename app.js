@@ -93,64 +93,50 @@ function startGame() {
 	questionsContainer.style.display = 'block';
 	currentQuestionIndex;
 	console.log(currentQuestionIndex);
-	displayFirstQuestion();
+	displayQuestion();
 }
 
 // for (let i = 0; i < musicQuestions.length; i++) {
 // 	console.log(i);
 // }
 
-function displayFirstQuestion() {
+function displayQuestion() {
 	//first question
-	let firstQuestion = musicQuestions[currentQuestionIndex];
-	questionDisplay.innerHTML = firstQuestion.question;
-	choiceA.innerHTML = firstQuestion.choiceA;
-	choiceB.innerHTML = firstQuestion.choiceB;
-	choiceC.innerHTML = firstQuestion.choiceC;
-	displaySecondQuestion();
+	let trivia = musicQuestions[currentQuestionIndex];
+	trivia.innerHTML = document.createElement('div');
+	questionDisplay.innerHTML = trivia.question;
+	choiceA.innerHTML = trivia.choiceA;
+	choiceB.innerHTML = trivia.choiceB;
+	choiceC.innerHTML = trivia.choiceC;
+	// displaySecondQuestion();
 	console.log(currentQuestionIndex);
 	//display question
 }
 
-function checkAnswer(answer) {
-	if (musicQuestions[currentQuestionIndex].correctAnswer === answer) {
+function checkAnswer() {
+	if (musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
 		alert('correct!');
 		console.log('correct');
-		currentQuestionIndex++;
-		displaySecondQuestion();
+		// displaySecondQuestion();
 	} else {
-		alert('incorrect');
-		console.log('incorrect!');
-		currentQuestionIndex++;
-		displaySecondQuestion();
 		//answer is wrong
+		// alert('incorrect');
+		console.log('incorrect!');
+	}
+	if (currentQuestionIndex < previousQuestionIndex) {
+		currentQuestionIndex++;
+		displayQuestion();
+	} else {
+		// alert('game over. reload the page to play again.');
+		returnToHomePage();
 	}
 }
 
-function displaySecondQuestion() {
-	console.log('next question!');
-	let secondQuestion = musicQuestions[currentQuestionIndex];
-	questionDisplay.innerHTML = secondQuestion.question;
-	choiceA.innerHTML = secondQuestion.choiceA;
-	choiceB.innerHTML = secondQuestion.choiceB;
-	choiceC.innerHTML = secondQuestion.choiceC;
-	// currentQuestionIndex++;
-	// displayThirdQuestion();
-}
-
-// function displayThirdQuestion() {
-// 	let thirdQuestion = musicQuestions[currentQuestionIndex];
-// 	questionDisplay.innerHTML = thirdQuestion.question;
-// 	choiceA.innerHTML = thirdQuestion.choiceA;
-// 	choiceB.innerHTML = thirdQuestion.choiceB;
-// 	choiceC.innerHTML = thirdQuestion.choiceC;
-// 	returnToHomePage();
-// }
-
 // return to home
 function returnToHomePage() {
-	//code for return to category homepage
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
 }
 
 // for (let i = 0; i < musicQuestions.length - 1; i++) {
