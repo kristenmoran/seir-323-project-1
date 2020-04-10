@@ -26,7 +26,10 @@ answerBtns.setAttribute(
 	'text-align: center; padding: 10px; margin-left: 10px; margin-top: -530px;'
 );
 
-scoreCounter.setAttribute('style', "font-family: Source Sans Pro, sans-serif; text-align: center; font-size: 30px; padding-top: 30px;")
+scoreCounter.setAttribute(
+	'style',
+	'font-family: Source Sans Pro, sans-serif; text-align: center; font-size: 30px; padding-top: 30px;'
+);
 
 //Music Category
 const music = document.querySelector('#music');
@@ -53,14 +56,28 @@ let musicQuestions = [
 		choiceC: 'C. Rocket Man',
 		correctAnswer: 'B',
 	},
+	{
+		question: '4. Who composed the music for The Lord of the Rings trilogy?',
+		choiceA: 'Howard Shore',
+		choiceB: 'John Williams',
+		choiceC: 'Alexandre Desplat',
+		correctAnswer: 'A',
+	},
+	{
+		question: '5. What was the first K-pop group to perform on SNL?',
+		choiceA: 'Girls Generation',
+		choiceB: 'BTS',
+		choiceC: 'BLACKPINK',
+		correctAnswer: 'B',
+	},
 ];
 
 //Trivia Game Logic
 //minus one because I don't want to display the correct answer
 let previousQuestionIndex = musicQuestions.length - 1;
 let currentQuestionIndex = 0;
-//if I put in a score for laster
 let score = 0;
+
 //answer buttons
 let choiceABtn = document.querySelector('#A');
 let choiceBBtn = document.querySelector('#B');
@@ -97,10 +114,6 @@ function startGame() {
 	currentQuestionIndex;
 	displayQuestion();
 }
-
-// for (let i = 0; i < musicQuestions.length; i++) {
-// 	console.log(i);
-// }
 
 function displayQuestion() {
 	//first question
