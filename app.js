@@ -72,6 +72,27 @@ let musicQuestions = [
 	},
 ];
 
+//Sports Category
+const sports = document.querySelector('#sports');
+let sportsQuestions = [];
+
+//Art Category
+const art = document.querySelector('#art');
+let artQuestions = [];
+
+//History Category
+const history = document.querySelector('#history');
+let historyQuestions = [];
+
+//Science Category
+const science = document.querySelector('#science');
+let scienceQuestions = [];
+
+//Pop! Culture Category
+
+const popCulture = document.querySelector('#pop-culture');
+let popCultureQuestions = [];
+
 //Trivia Game Logic
 //minus one because I don't want to display the correct answer
 let previousQuestionIndex = musicQuestions.length - 1;
