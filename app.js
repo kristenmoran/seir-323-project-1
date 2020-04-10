@@ -56,11 +56,12 @@ let musicQuestions = [
 //minus one because I don't want to display the correct answer
 let previousQuestionIndex = musicQuestions.length - 1;
 let currentQuestionIndex = 0;
+//if I put in a score for laster
 let score = 0;
-// let nextButton = document.querySelector('#next');
-let choiceABtn = document.querySelector('#choiceA');
-let choiceBBtn = document.querySelector('#choiceB');
-let choiceCBtn = document.querySelector('#choiceC');
+//answer buttons
+let choiceABtn = document.querySelector('#A');
+let choiceBBtn = document.querySelector('#B');
+let choiceCBtn = document.querySelector('#C');
 
 //EVENT LISTENERS
 
@@ -88,7 +89,6 @@ function closeModal() {
 }
 
 //Music Category
-
 function startGame() {
 	questionsContainer.style.display = 'block';
 	currentQuestionIndex;
@@ -105,23 +105,22 @@ function displayQuestion() {
 	let trivia = musicQuestions[currentQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
-	choiceA.innerHTML = trivia.choiceA;
-	choiceB.innerHTML = trivia.choiceB;
-	choiceC.innerHTML = trivia.choiceC;
-	// displaySecondQuestion();
-	console.log(currentQuestionIndex);
+	choiceABtn.innerHTML = trivia.choiceA;
+	choiceBBtn.innerHTML = trivia.choiceB;
+	choiceCBtn.innerHTML = trivia.choiceC;
 	//display question
 }
 
-function checkAnswer() {
-	if (musicQuestions[currentQuestionIndex].correctAnswer) {
+function checkAnswer(event) {
+	console.log(event.target);
+	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
 		alert('correct!');
-		console.log('correct');
+		console.log(musicQuestions[currentQuestionIndex].correctAnswer);
 		// displaySecondQuestion();
 	} else {
 		//answer is wrong
-		// alert('incorrect');
+		alert('incorrect');
 		console.log('incorrect!');
 	}
 	if (currentQuestionIndex < previousQuestionIndex) {
@@ -138,15 +137,3 @@ function returnToHomePage() {
 	//code for return to category homepage by hiding container
 	questionsContainer.style.display = 'none';
 }
-
-// for (let i = 0; i < musicQuestions.length - 1; i++) {
-//     console.log(i);
-//     //after choice is made say if it is correct
-//     let playAnswer = musicQuestions[i].correctAnswer;
-//     if (playAnswer === musicQuestions[i].correctAnswer) {
-//         console.log('correct');
-//     } else {
-//         //or not correct
-//         console.log('incorrect');
-//     }
-// }
