@@ -31,7 +31,7 @@ div#history, div#science, div#pop-culture {
 button {
 	display: flex;
 	text-align: center;
-	margin: 50px auto;
+	margin: 30px auto;
 }
 
 .categories {
@@ -49,9 +49,9 @@ button {
 }
 
 .question-board {
-    display: none;
-    border: #8aa29e solid 2px;
-    margin: auto;
+	display: none;
+	border: #8aa29e solid 2px;
+	margin: 50px;
     width: 500px;
 }
 
