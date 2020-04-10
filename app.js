@@ -13,6 +13,7 @@ let questionsContainer = document.querySelector('#question-container');
 //the modal is below
 let questionDisplay = document.querySelector('#question-display');
 let answerBtns = document.querySelector('#answer-buttons');
+let scoreCounter = document.querySelector('#score-counter');
 
 //Styling Attributes
 questionDisplay.setAttribute(
@@ -24,6 +25,8 @@ answerBtns.setAttribute(
 	'style',
 	'text-align: center; padding: 10px; margin-left: 10px; margin-top: -530px;'
 );
+
+scoreCounter.setAttribute('style', "font-family: Source Sans Pro, sans-serif; text-align: center; font-size: 30px; padding-top: 30px;")
 
 //Music Category
 const music = document.querySelector('#music');
@@ -115,6 +118,7 @@ function checkAnswer(event) {
 	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
 		alert('correct!');
+		score++;
 		// displaySecondQuestion();
 	} else {
 		//answer is wrong
@@ -133,4 +137,6 @@ function checkAnswer(event) {
 function returnToHomePage() {
 	//code for return to category homepage by hiding container
 	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} correct!`;
 }
