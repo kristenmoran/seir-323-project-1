@@ -170,24 +170,21 @@ function checkAnswer(event) {
 	//targeting the event and id from HTML
 	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
-		// alert('correct!');
 		score++;
 		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
 	} else {
 		//answer is wrong
-		// alert('incorrect');
 		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
 	if (currentQuestionIndex < previousQuestionIndex) {
 		currentQuestionIndex++;
 		displayQuestion();
 	} else {
-		// alert('game over. reload the page to play again.');
 		returnToHomePage();
 	}
 }
 
-// return to home
+//Return to beginning
 function returnToHomePage() {
 	//code for return to category homepage by hiding container
 	questionsContainer.style.display = 'none';
