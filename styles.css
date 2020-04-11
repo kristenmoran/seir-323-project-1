@@ -53,19 +53,6 @@ button {
 	background-color: #8aa29e;
 }
 
-/* .trivia-modal {
-	background-color: #e3f2fd;
-	font-family: 'Source Sans Pro', sans-serif;
-	height: 450px;
-	width: 550px;
-	border-radius: 2px;
-	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-	padding: 10px;
-	margin: 150px auto;
-	line-height: 120%;
-	display: none;
-} */
-
 #question-container {
 	background-color: rgba(0, 0, 0, 0.4);
 	display: none;
@@ -89,15 +76,12 @@ button {
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 	padding: 10px;
 	margin: 150px auto;
-    line-height: 120%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+	line-height: 120%;
 }
 
 .btn {
-    padding: 15px 18px;
-    margin: 25px, auto;
+	padding: 15px 18px;
+	margin: 25px, auto;
 	background-color: #db5461;
 	border: none;
 	outline: none;
@@ -105,15 +89,36 @@ button {
 	color: white;
 	font-family: 'Source Sans Pro', sans-serif;
 	cursor: pointer;
-    text-decoration: none;
+	text-decoration: none;
 	font-size: 26px;
-	flex-wrap: nowrap; 
+	flex-wrap: nowrap;
 	flex-direction: column;
 }
 
 .btn:hover {
 	color: #fafafa;
 	background-color: #8aa29e;
+}
+
+.score-updater {
+	font-family: "Source Sans Pro", sans-serif;
+	text-align: center;
+	font-size: 25px;
+	color: black;
+}
+
+#score-counter {
+	background-color: #e3f2fd;
+	font-family: 'Source Sans Pro', sans-serif;
+	height: 50px;
+	width: 350px;
+	border-radius: 5px;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin: 35px auto;
+	line-height: 120%;
+	display: none;
+	position: relative;
 }
 
 /* Modal styling */
@@ -155,7 +160,7 @@ button {
 	border: none;
 	outline: none;
 	border-radius: 7px;
-	color: white;
+	color: #fafafa;
 	font-family: 'Source Sans Pro', sans-serif;
 	cursor: pointer;
 	text-decoration: none;
@@ -164,4 +169,28 @@ button {
 #modal-footer {
 	text-align: right;
 	padding-top: 15px;
+}
+
+footer {
+	background-color: #e3f2fd;
+	position: absolute;
+	bottom: 0;
+	margin-top: 100px;
+	height: 95px;
+	padding: 20px;
+	width: 100%;
+	clear: both;
+	border: #8aa29e 3px solid;
+}
+
+p {
+	color: #db5461;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: left;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.contact {
+	color: #db5461;
 }
