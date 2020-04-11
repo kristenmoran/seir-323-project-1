@@ -13,6 +13,7 @@ let questionsContainer = document.querySelector('#question-container');
 //the modal is questionDisplay
 let questionDisplay = document.querySelector('#question-display');
 let answerBtns = document.querySelector('#answer-buttons');
+let scoreUpdater = document.querySelector('.score-updater');
 let scoreCounter = document.querySelector('#score-counter');
 
 //Styling Attributes
@@ -110,8 +111,25 @@ let choiceCBtn = document.querySelector('#C');
 openModalBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 
-//Music Category
+//Category Start buttons
+
+//Music Start
 music.addEventListener('click', startGame);
+
+//Sports Start
+sports.addEventListener('click', startGame);
+
+//Art Start
+art.addEventListener('click', startGame);
+
+//History Start
+history.addEventListener('click', startGame);
+
+//Science Start
+science.addEventListener('click', startGame);
+
+//Pop! Culture Start
+popCulture.addEventListener('click', startGame);
 
 //Trivia Logic
 choiceABtn.addEventListener('click', checkAnswer);
@@ -133,30 +151,32 @@ function closeModal() {
 function startGame() {
 	questionsContainer.style.display = 'block';
 	currentQuestionIndex;
+	scoreUpdater.innerHTML = '0 of 5 questions';
 	displayQuestion();
 }
 
 function displayQuestion() {
-	//first question
+	//display question
 	let trivia = musicQuestions[currentQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
+	//add buttons
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
-	//display question
 }
 
 function checkAnswer(event) {
 	//targeting the event and id from HTML
 	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
 		//answer is correct
-		alert('correct!');
+		// alert('correct!');
 		score++;
-		// displaySecondQuestion();
+		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
 	} else {
 		//answer is wrong
-		alert('incorrect');
+		// alert('incorrect');
+		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
 	if (currentQuestionIndex < previousQuestionIndex) {
 		currentQuestionIndex++;
@@ -172,5 +192,5 @@ function returnToHomePage() {
 	//code for return to category homepage by hiding container
 	questionsContainer.style.display = 'none';
 	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} correct!`;
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
 }

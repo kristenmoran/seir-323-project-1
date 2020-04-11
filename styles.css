@@ -100,6 +100,13 @@ button {
 	background-color: #8aa29e;
 }
 
+.score-updater {
+	font-family: "Source Sans Pro", sans-serif;
+	text-align: center;
+	font-size: 25px;
+	color: black;
+}
+
 #score-counter {
 	background-color: #e3f2fd;
 	font-family: 'Source Sans Pro', sans-serif;
