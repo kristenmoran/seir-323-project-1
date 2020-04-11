@@ -121,39 +121,40 @@ let sportsQuestions = [
 const art = document.querySelector('#art');
 let artQuestions = [
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '1. Who painted "Starry Night"?',
+		choiceA: 'A. Vincent Van Gogh',
+		choiceB: 'B. Edgar Degas',
+		choiceC: 'C. Michelangelo',
+		correctAnswer: 'A',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '2. What year was Pablo Picasso born?',
+		choiceA: 'A. 1902',
+		choiceB: 'B. 1881',
+		choiceC: 'C. 1897',
+		correctAnswer: 'B',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '3. What museum houses "The Birth of Venus"?',
+		choiceA: 'A. The British Museum',
+		choiceB: 'B. The Met',
+		choiceC: 'C. The Uffizi',
+		correctAnswer: 'C',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question:
+			'4. Who of the following painters is considered to be an Impressionist?',
+		choiceA: 'A. Leonardo da Vinci',
+		choiceB: 'B. Claude Monet',
+		choiceC: 'C. Jackson Pollack',
+		correctAnswer: 'B',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: 'How many self-portraits did Frida Kahlo paint?',
+		choiceA: 'A. 33',
+		choiceB: 'B. 44',
+		choiceC: 'C. 55',
+		correctAnswer: 'C',
 	},
 ];
 
@@ -161,39 +162,39 @@ let artQuestions = [
 const history = document.querySelector('#history');
 let historyQuestions = [
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: 'What year was the Magna Carta signed?',
+		choiceA: 'A. 1345',
+		choiceB: 'B. 1492',
+		choiceC: 'C. 1215',
+		correctAnswer: 'C',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: 'Who was the first emperor of Rome?',
+		choiceA: 'A. Julius Caesar',
+		choiceB: 'B. Augustus',
+		choiceC: 'C. Marcus Aurelius',
+		correctAnswer: 'B',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: 'How long was the 100 Years War?',
+		choiceA: 'A. 100 years',
+		choiceB: 'B. 107 years',
+		choiceC: 'C. 116 years',
+		correctAnswer: 'C',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: 'How many wives did Henry VIII behead?',
+		choiceA: 'A. 2',
+		choiceB: 'B. 3',
+		choiceC: 'C. 4',
+		correctAnswer: 'A',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: 'Which native peoples populated the areas of Colombia and Peru?',
+		choiceA: 'A. Incas',
+		choiceB: 'B. Aztecs',
+		choiceC: 'C. Mayans',
+		correctAnswer: 'A',
 	},
 ];
 
@@ -201,39 +202,39 @@ let historyQuestions = [
 const science = document.querySelector('#science');
 let scienceQuestions = [
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '1. Who came up with the three laws of motion?',
+		choiceA: 'A. Sir Isaac Newton',
+		choiceB: 'B. Sir Francis Bacon',
+		choiceC: 'C. Albert Einstein',
+		correctAnswer: 'A',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '2. What planet has the most moons?',
+		choiceA: 'A. Saturn',
+		choiceB: 'B. Jupiter',
+		choiceC: 'C. Uranus',
+		correctAnswer: 'B',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '3. Who invented the first battery?',
+		choiceA: 'A. Nikola Tesla',
+		choiceB: 'B. Thomas Edison',
+		choiceC: 'C. Alessandro Volta',
+		correctAnswer: 'C',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '4. What is the Periodic Table of Elements symbol for silver?',
+		choiceA: 'A. Ag',
+		choiceB: 'B. Si',
+		choiceC: 'C. Au',
+		correctAnswer: 'A',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '5. What is the most abundant element in the universe?',
+		choiceA: 'A. Hydrogen',
+		choiceB: 'B. Oxygen',
+		choiceC: 'C. Helium',
+		correctAnswer: 'A',
 	},
 ];
 
@@ -242,39 +243,41 @@ let scienceQuestions = [
 const popCulture = document.querySelector('#pop-culture');
 let popCultureQuestions = [
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question:
+			'1. What as the highest grossing movie in the US domestic market in 2018?',
+		choiceA: "A. Avenger's Infinity War",
+		choiceB: 'B. Jurassic World: Fallen Kingdom',
+		choiceC: 'C. Black Panther',
+		correctAnswer: 'C',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '2. How many houses does Hogwarts have?',
+		choiceA: 'A. 5',
+		choiceB: 'B. 4',
+		choiceC: 'C. 7',
+		correctAnswer: 'B',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '3. In Arrested Development, where is there always money?',
+		choiceA: 'A. In the walls',
+		choiceB: 'B. In the mattress',
+		choiceC: 'C. In the banana stand',
+		correctAnswer: 'C',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question: '4. What movie won Best Picture at the 2020 Academy Awards?',
+		choiceA: 'A. Parasite',
+		choiceB: 'B. Jojo Rabbit',
+		choiceC: 'C. 1917',
+		correctAnswer: 'A',
 	},
 	{
-		question: '',
-		choiceA: '',
-		choiceB: '',
-		choiceC: '',
-		correctAnswer: '',
+		question:
+			'What two performers headlined the 2020 Super Bowl halftime show?',
+		choiceA: 'A. Beyonce and Bruno Mars',
+		choiceB: 'B. Jennifer Lopez and Shakira',
+		choiceC: 'C. Jennifer Lopez and Katy Perry',
+		correctAnswer: 'B',
 	},
 ];
 
@@ -331,7 +334,7 @@ function closeModal() {
 	modalContainer.style.display = 'none';
 }
 
-//Music Category
+//Start function for all trivia categories
 function startGame() {
 	questionsContainer.style.display = 'block';
 	currentQuestionIndex;
@@ -339,6 +342,7 @@ function startGame() {
 	displayQuestion();
 }
 
+//Music Category
 function displayQuestion() {
 	//display question
 	let trivia = musicQuestions[currentQuestionIndex];
