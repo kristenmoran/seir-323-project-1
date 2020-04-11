@@ -75,24 +75,208 @@ let musicQuestions = [
 
 //Sports Category
 const sports = document.querySelector('#sports');
-let sportsQuestions = [];
+let sportsQuestions = [
+	{
+		question: '1. What city hosted the 1998 Winter Olympics?',
+		choiceA: 'A. Nagano',
+		choiceB: 'B. Oslo',
+		choiceC: 'C. Vancouver',
+		correctAnswer: 'A',
+	},
+
+	{
+		question: '2. What MLB team has won the most World Series?',
+		choiceA: 'A. St. Louis Cardinals',
+		choiceB: 'B. Boston Red Sox',
+		choiceC: 'C. New York Yankees',
+		correctAnswer: 'C',
+	},
+
+	{
+		question: "3. What country won the 2018 Men's FIFA World Cup?",
+		choiceA: 'A. France',
+		choiceB: 'B. Germany',
+		choiceC: 'C. Belgium',
+		correctAnswer: 'A',
+	},
+
+	{
+		question: "4. What sport, other than baseball, uses the word 'home run'?",
+		choiceA: 'A. Badminton',
+		choiceB: 'B. Volleyball',
+		choiceC: 'C. Cricket',
+		correctAnswer: 'C',
+	},
+
+	{
+		question: 'In what year did boxing become a legal sport in the US?',
+		choiceA: 'A. 1921',
+		choiceB: 'B. 1901',
+		choiceC: 'C. 1896',
+		correctAnswer: 'B',
+	},
+];
 
 //Art Category
 const art = document.querySelector('#art');
-let artQuestions = [];
+let artQuestions = [
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+];
 
 //History Category
 const history = document.querySelector('#history');
-let historyQuestions = [];
+let historyQuestions = [
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+];
 
 //Science Category
 const science = document.querySelector('#science');
-let scienceQuestions = [];
+let scienceQuestions = [
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+];
 
 //Pop! Culture Category
 
 const popCulture = document.querySelector('#pop-culture');
-let popCultureQuestions = [];
+let popCultureQuestions = [
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+	{
+		question: '',
+		choiceA: '',
+		choiceB: '',
+		choiceC: '',
+		correctAnswer: '',
+	},
+];
 
 //Trivia Game Logic
 //minus one because I don't want to display the correct answer
