@@ -8,9 +8,9 @@ const openModalBtn = document.querySelector('#openModal');
 const closeModalBtn = document.querySelector('#closeModal');
 
 //Questions Board
-// let triviaModal = document.querySelector('.trivia-modal')
+//questionContainer is the light grey background
 let questionsContainer = document.querySelector('#question-container');
-//the modal is below
+//the modal is questionDisplay
 let questionDisplay = document.querySelector('#question-display');
 let answerBtns = document.querySelector('#answer-buttons');
 let scoreCounter = document.querySelector('#score-counter');
@@ -58,16 +58,16 @@ let musicQuestions = [
 	},
 	{
 		question: '4. Who composed the music for The Lord of the Rings trilogy?',
-		choiceA: 'Howard Shore',
-		choiceB: 'John Williams',
-		choiceC: 'Alexandre Desplat',
+		choiceA: 'A. Howard Shore',
+		choiceB: 'B. John Williams',
+		choiceC: 'C. Alexandre Desplat',
 		correctAnswer: 'A',
 	},
 	{
 		question: '5. What was the first K-pop group to perform on SNL?',
-		choiceA: 'Girls Generation',
-		choiceB: 'BTS',
-		choiceC: 'BLACKPINK',
+		choiceA: 'A. Girls Generation',
+		choiceB: 'B. BTS',
+		choiceC: 'C. BLACKPINK',
 		correctAnswer: 'B',
 	},
 ];
