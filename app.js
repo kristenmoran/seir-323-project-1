@@ -35,7 +35,7 @@ scoreCounter.setAttribute(
 //Music Category
 const music = document.querySelector('#music');
 //Objects in an array to hold the questions and answers
-let musicQuestions = [
+const musicQuestions = [
 	{
 		question: '1. Who composed the Four Seasons?',
 		choiceA: 'A. Wolfgang Amadeus Mozart',
@@ -109,7 +109,7 @@ let sportsQuestions = [
 	},
 
 	{
-		question: 'In what year did boxing become a legal sport in the US?',
+		question: '5. In what year did boxing become a legal sport in the US?',
 		choiceA: 'A. 1921',
 		choiceB: 'B. 1901',
 		choiceC: 'C. 1896',
@@ -150,7 +150,7 @@ let artQuestions = [
 		correctAnswer: 'B',
 	},
 	{
-		question: 'How many self-portraits did Frida Kahlo paint?',
+		question: '5. How many self-portraits did Frida Kahlo paint?',
 		choiceA: 'A. 33',
 		choiceB: 'B. 44',
 		choiceC: 'C. 55',
@@ -162,35 +162,36 @@ let artQuestions = [
 const history = document.querySelector('#history');
 let historyQuestions = [
 	{
-		question: 'What year was the Magna Carta signed?',
+		question: '1. What year was the Magna Carta signed?',
 		choiceA: 'A. 1345',
 		choiceB: 'B. 1492',
 		choiceC: 'C. 1215',
 		correctAnswer: 'C',
 	},
 	{
-		question: 'Who was the first emperor of Rome?',
+		question: '2. Who was the first emperor of Rome?',
 		choiceA: 'A. Julius Caesar',
 		choiceB: 'B. Augustus',
 		choiceC: 'C. Marcus Aurelius',
 		correctAnswer: 'B',
 	},
 	{
-		question: 'How long was the 100 Years War?',
+		question: '3. How long was the 100 Years War?',
 		choiceA: 'A. 100 years',
 		choiceB: 'B. 107 years',
 		choiceC: 'C. 116 years',
 		correctAnswer: 'C',
 	},
 	{
-		question: 'How many wives did Henry VIII behead?',
+		question: '4. How many wives did Henry VIII behead?',
 		choiceA: 'A. 2',
 		choiceB: 'B. 3',
 		choiceC: 'C. 4',
 		correctAnswer: 'A',
 	},
 	{
-		question: 'Which native peoples populated the areas of Colombia and Peru?',
+		question:
+			'5. Which native peoples populated the areas of Colombia and Peru?',
 		choiceA: 'A. Incas',
 		choiceB: 'B. Aztecs',
 		choiceC: 'C. Mayans',
@@ -273,7 +274,7 @@ let popCultureQuestions = [
 	},
 	{
 		question:
-			'What two performers headlined the 2020 Super Bowl halftime show?',
+			'5. What two performers headlined the 2020 Super Bowl halftime show?',
 		choiceA: 'A. Beyonce and Bruno Mars',
 		choiceB: 'B. Jennifer Lopez and Shakira',
 		choiceC: 'C. Jennifer Lopez and Katy Perry',
@@ -283,8 +284,14 @@ let popCultureQuestions = [
 
 //Trivia Game Logic
 //minus one because I don't want to display the correct answer
-let previousQuestionIndex = musicQuestions.length - 1;
-let currentQuestionIndex = 0;
+let previousMusicQuestionIndex = musicQuestions.length - 1;
+let previousSportsQuestionIndex = sportsQuestions.length - 1;
+let previousArtQuestionIndex = artQuestions.length - 1;
+let previousHistoryQuestionIndex = historyQuestions.length - 1;
+let previousScienceQuestionIndex = scienceQuestions.length - 1;
+let previousPopCultureQuestionIndex = popCultureQuestions.length - 1;
+let currentMusicQuestionIndex = 0;
+let currentSportsQuestionIndex = 0;
 let score = 0;
 
 //answer buttons
@@ -301,27 +308,54 @@ closeModalBtn.addEventListener('click', closeModal);
 //Category Start buttons
 
 //Music Start
-music.addEventListener('click', startGame);
+music.addEventListener('click', startMusicGame);
 
 //Sports Start
-sports.addEventListener('click', startGame);
+// sports.addEventListener('click', startSportsGame);
 
-//Art Start
-art.addEventListener('click', startGame);
+// //Art Start
+// art.addEventListener('click', startArtGame);
 
-//History Start
-history.addEventListener('click', startGame);
+// //History Start
+// history.addEventListener('click', startHistoryGame);
 
-//Science Start
-science.addEventListener('click', startGame);
+// //Science Start
+// science.addEventListener('click', startScienceGame);
 
-//Pop! Culture Start
-popCulture.addEventListener('click', startGame);
+// //Pop! Culture Start
+// popCulture.addEventListener('click', startPopCultureGame);
 
 //Trivia Logic
-choiceABtn.addEventListener('click', checkAnswer);
-choiceBBtn.addEventListener('click', checkAnswer);
-choiceCBtn.addEventListener('click', checkAnswer);
+
+//Music
+choiceABtn.addEventListener('click', checkMusicAnswer);
+choiceBBtn.addEventListener('click', checkMusicAnswer);
+choiceCBtn.addEventListener('click', checkMusicAnswer);
+
+//Sports
+// choiceABtn.addEventListener('click', checkSportsAnswer);
+// choiceBBtn.addEventListener('click', checkSportsAnswer);
+// choiceCBtn.addEventListener('click', checkSportsAnswer);
+
+// //Art
+// choiceABtn.addEventListener('click', checkArtAnswer);
+// choiceBBtn.addEventListener('click', checkArtAnswer);
+// choiceCBtn.addEventListener('click', checkArtAnswer);
+
+// //History
+// choiceABtn.addEventListener('click', checkHistoryAnswer);
+// choiceBBtn.addEventListener('click', checkHistoryAnswer);
+// choiceCBtn.addEventListener('click', checkHistoryAnswer);
+
+// //Science
+// choiceABtn.addEventListener('click', checkScienceAnswer);
+// choiceBBtn.addEventListener('click', checkScienceAnswer);
+// choiceCBtn.addEventListener('click', checkScienceAnswer);
+
+// //Pop! Culture
+// choiceABtn.addEventListener('click', checkPopCultureAnswer);
+// choiceBBtn.addEventListener('click', checkPopCultureAnswer);
+// choiceCBtn.addEventListener('click', checkPopCultureAnswer);
 
 //FUNCTIONS
 
@@ -335,17 +369,17 @@ function closeModal() {
 }
 
 //Start function for all trivia categories
-function startGame() {
+function startMusicGame() {
 	questionsContainer.style.display = 'block';
-	currentQuestionIndex;
+	currentMusicQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
-	displayQuestion();
+	displayMusicQuestion();
 }
 
 //Music Category
-function displayQuestion() {
+function displayMusicQuestion() {
 	//display question
-	let trivia = musicQuestions[currentQuestionIndex];
+	let trivia = musicQuestions[currentMusicQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
@@ -354,9 +388,9 @@ function displayQuestion() {
 	choiceCBtn.innerHTML = trivia.choiceC;
 }
 
-function checkAnswer(event) {
+function checkMusicAnswer(event) {
 	//targeting the event and id from HTML
-	if (event.target.id === musicQuestions[currentQuestionIndex].correctAnswer) {
+	if (event.target.id === musicQuestions[currentMusicQuestionIndex].correctAnswer) {
 		//answer is correct
 		score++;
 		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
@@ -364,9 +398,9 @@ function checkAnswer(event) {
 		//answer is wrong
 		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
-	if (currentQuestionIndex < previousQuestionIndex) {
-		currentQuestionIndex++;
-		displayQuestion();
+	if (currentMusicQuestionIndex < previousMusicQuestionIndex) {
+		currentMusicQuestionIndex++;
+		displayMusicQuestion();
 	} else {
 		returnToHomePage();
 	}
@@ -379,3 +413,254 @@ function returnToHomePage() {
 	scoreCounter.style.display = 'block';
 	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
 }
+
+/*
+//Sports Trivia Game
+
+//Start function for sports categories
+function startSportsGame() {
+	questionsContainer.style.display = 'block';
+	currentSportsQuestionIndex = 0;
+	scoreUpdater.innerHTML = '0 of 5 questions';
+	displaySportsQuestion();
+}
+
+//Display Sports Category
+function displaySportsQuestion() {
+	//display question
+	let trivia = sportsQuestions[currentSportsQuestionIndex];
+	trivia.innerHTML = document.createElement('div');
+	questionDisplay.innerHTML = trivia.question;
+	//add buttons
+	choiceABtn.innerHTML = trivia.choiceA;
+	choiceBBtn.innerHTML = trivia.choiceB;
+	choiceCBtn.innerHTML = trivia.choiceC;
+}
+
+//Check Sports Question
+function checkSportsAnswer(event) {
+	//targeting the event and id from HTML
+	if (event.target.id === sportsQuestions[currentSportsQuestionIndex].correctAnswer) {
+		//answer is correct
+		score++;
+		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
+	} else {
+		//answer is wrong
+		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
+	}
+	if (currentSportsQuestionIndex < previousSportsQuestionIndex) {
+		currentSportsQuestionIndex++;
+		displaySportsQuestion();
+	} else {
+		returnToHomePage();
+	}
+}
+
+//Return to beginning
+function returnToHomePage() {
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
+}
+
+/*
+//Art Trivia
+//Start function for art categories
+function startArtGame() {
+	questionsContainer.style.display = 'block';
+	currentQuestionIndex = 0;
+	scoreUpdater.innerHTML = '0 of 5 questions';
+	displayArtQuestion();
+}
+
+//Display Sports Category
+function displayArtQuestion() {
+	//display question
+	let trivia = artQuestions[currentQuestionIndex];
+	trivia.innerHTML = document.createElement('div');
+	questionDisplay.innerHTML = trivia.question;
+	//add buttons
+	choiceABtn.innerHTML = trivia.choiceA;
+	choiceBBtn.innerHTML = trivia.choiceB;
+	choiceCBtn.innerHTML = trivia.choiceC;
+}
+
+//Check Sports Question
+function checkArtAnswer(event) {
+	//targeting the event and id from HTML
+	if (event.target.id === artQuestions[currentQuestionIndex].correctAnswer) {
+		//answer is correct
+		score++;
+		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
+	} else {
+		//answer is wrong
+		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
+	}
+	if (currentQuestionIndex < previousQuestionIndex) {
+		currentQuestionIndex++;
+		displayArtQuestion();
+	} else {
+		returnToHomePage();
+	}
+}
+
+//Return to beginning
+function returnToHomePage() {
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
+}
+
+//History Trivia
+//Start function for history categories
+function startHistoryGame() {
+	questionsContainer.style.display = 'block';
+	currentQuestionIndex = 0;
+	scoreUpdater.innerHTML = '0 of 5 questions';
+	displayHistoryQuestion();
+}
+
+//Display history Category
+function displayHistoryQuestion() {
+	//display question
+	let trivia = historyQuestions[currentQuestionIndex];
+	trivia.innerHTML = document.createElement('div');
+	questionDisplay.innerHTML = trivia.question;
+	//add buttons
+	choiceABtn.innerHTML = trivia.choiceA;
+	choiceBBtn.innerHTML = trivia.choiceB;
+	choiceCBtn.innerHTML = trivia.choiceC;
+}
+
+//Check history Question
+function checkHistoryAnswer(event) {
+	//targeting the event and id from HTML
+	if (
+		event.target.id === historyQuestions[currentQuestionIndex].correctAnswer
+	) {
+		//answer is correct
+		score++;
+		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
+	} else {
+		//answer is wrong
+		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
+	}
+	if (currentQuestionIndex < previousQuestionIndex) {
+		currentQuestionIndex++;
+		displayHistoryQuestion();
+	} else {
+		returnToHomePage();
+	}
+}
+
+//Return to beginning
+function returnToHomePage() {
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
+}
+
+//Science Trivia
+//Start function for science categories
+function startScienceGame() {
+	questionsContainer.style.display = 'block';
+	currentQuestionIndex = 0;
+	scoreUpdater.innerHTML = '0 of 5 questions';
+	displayScienceQuestion();
+}
+
+//Display Science Category
+function displayScienceQuestion() {
+	//display question
+	let trivia = scienceQuestions[currentQuestionIndex];
+	trivia.innerHTML = document.createElement('div');
+	questionDisplay.innerHTML = trivia.question;
+	//add buttons
+	choiceABtn.innerHTML = trivia.choiceA;
+	choiceBBtn.innerHTML = trivia.choiceB;
+	choiceCBtn.innerHTML = trivia.choiceC;
+}
+
+//Check Science Question
+function checkScienceAnswer(event) {
+	//targeting the event and id from HTML
+	if (
+		event.target.id === scienceQuestions[currentQuestionIndex].correctAnswer
+	) {
+		//answer is correct
+		score++;
+		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
+	} else {
+		//answer is wrong
+		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
+	}
+	if (currentQuestionIndex < previousQuestionIndex) {
+		currentQuestionIndex++;
+		displayScienceQuestion();
+	} else {
+		returnToHomePage();
+	}
+}
+
+//Return to beginning
+function returnToHomePage() {
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
+}
+
+//Pop! Culture Trivia
+
+//Start function for sports categories
+function startPopCultureGame() {
+	questionsContainer.style.display = 'block';
+	currentQuestionIndex = 0;
+	scoreUpdater.innerHTML = '0 of 5 questions';
+	displayPopCultureQuestion();
+}
+
+//Display PopCulture Category
+function displayPopCultureQuestion() {
+	//display question
+	let trivia = popCultureQuestions[currentQuestionIndex];
+	trivia.innerHTML = document.createElement('div');
+	questionDisplay.innerHTML = trivia.question;
+	//add buttons
+	choiceABtn.innerHTML = trivia.choiceA;
+	choiceBBtn.innerHTML = trivia.choiceB;
+	choiceCBtn.innerHTML = trivia.choiceC;
+}
+
+//Check Pop Culture Question
+function checkPopCultureAnswer(event) {
+	//targeting the event and id from HTML
+	if (
+		event.target.id === popCultureQuestions[currentQuestionIndex].correctAnswer
+	) {
+		//answer is correct
+		score++;
+		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
+	} else {
+		//answer is wrong
+		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
+	}
+	if (currentQuestionIndex < previousQuestionIndex) {
+		currentQuestionIndex++;
+		displayPopCultureQuestion();
+	} else {
+		returnToHomePage();
+	}
+}
+
+//Return to beginning
+function returnToHomePage() {
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
+}
+*/
