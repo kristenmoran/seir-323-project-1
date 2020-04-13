@@ -318,7 +318,8 @@ science.addEventListener('click', startScienceGame);
 //Pop! Culture Start
 popCulture.addEventListener('click', startPopCultureGame);
 
-//Trivia Logic
+//Exit Game before questions are done
+questionsContainer.addEventListener('click', returnToHomePage);
 
 //FUNCTIONS
 
@@ -351,7 +352,7 @@ function startMusicGame() {
 	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentMusicQuestionIndex = 0;
-	scoreUpdater.innerHTML = '0 of 5 questions';
+	scoreUpdater.innerHTML = '1 of 5 questions';
 	displayMusicQuestion();
 }
 
@@ -435,7 +436,7 @@ function startSportsGame() {
 	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentSportsQuestionIndex = 0;
-	scoreUpdater.innerHTML = '0 of 5 questions';
+	scoreUpdater.innerHTML = '1 of 5 questions';
 	displaySportsQuestion();
 }
 
@@ -521,7 +522,7 @@ function startArtGame() {
 	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentArtQuestionIndex = 0;
-	scoreUpdater.innerHTML = '0 of 5 questions';
+	scoreUpdater.innerHTML = '1 of 5 questions';
 	displayArtQuestion();
 }
 
@@ -604,7 +605,7 @@ function startHistoryGame() {
 	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentHistoryQuestionIndex = 0;
-	scoreUpdater.innerHTML = '0 of 5 questions';
+	scoreUpdater.innerHTML = '1 of 5 questions';
 	displayHistoryQuestion();
 }
 
@@ -690,7 +691,7 @@ function startScienceGame() {
 	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentScienceQuestionIndex = 0;
-	scoreUpdater.innerHTML = '0 of 5 questions';
+	scoreUpdater.innerHTML = '1 of 5 questions';
 	displayScienceQuestion();
 }
 
@@ -777,7 +778,7 @@ function startPopCultureGame() {
 	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentPopCultureQuestionIndex = 0;
-	scoreUpdater.innerHTML = '0 of 5 questions';
+	scoreUpdater.innerHTML = '1 of 5 questions';
 	displayPopCultureQuestion();
 }
 

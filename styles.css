@@ -17,21 +17,6 @@ h2 {
 	text-align: center;
 }
 
-/* for if i can figure out how to put three in a row with two columns
-
-div#music, div#sports, div#art {
-    flex-direction: column;
-    border: #db5461 2px solid;
-    height: 100%;
-    width: 100%
-}
-
-div#history, div#science, div#pop-culture {
-    flex-wrap: wrap;
-    flex-direction: row;
-    border: #db5461 2px solid;
-} */
-
 button {
 	display: flex;
 	text-align: center;
@@ -80,12 +65,12 @@ button {
 }
 
 .score-updater {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-align: center;
 	font-size: 25px;
 	color: black;
 	margin: 300px auto;
-	border: 300px; 
+	border: 300px;
 }
 
 #score-counter {
@@ -151,6 +136,8 @@ button {
 	text-align: right;
 	padding-top: 15px;
 }
+
+/* Footer styling */
 
 footer {
 	background-color: #e3f2fd;
