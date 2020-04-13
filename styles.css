@@ -79,27 +79,6 @@ button {
 	line-height: 120%;
 }
 
-.btn {
-	padding: 15px 18px;
-	margin: 25px auto;
-	background-color: #db5461;
-	border: none;
-	outline: none;
-	border-radius: 10px;
-	color: white;
-	font-family: 'Source Sans Pro', sans-serif;
-	cursor: pointer;
-	text-decoration: none;
-	font-size: 26px;
-	flex-wrap: nowrap;
-	flex-direction: column;
-}
-
-.btn:hover {
-	color: #fafafa;
-	background-color: #8aa29e;
-}
-
 .score-updater {
 	font-family: "Source Sans Pro", sans-serif;
 	text-align: center;

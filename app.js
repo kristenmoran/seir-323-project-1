@@ -290,12 +290,6 @@ let previousArtQuestionIndex = artQuestions.length - 1;
 let previousHistoryQuestionIndex = historyQuestions.length - 1;
 let previousScienceQuestionIndex = scienceQuestions.length - 1;
 let previousPopCultureQuestionIndex = popCultureQuestions.length - 1;
-let currentMusicQuestionIndex = 0;
-let currentSportsQuestionIndex = 0;
-let currentArtQuestionIndex = 0;
-let currentHistoryQuestionIndex = 0;
-let currentScienceQuestionIndex = 0;
-let currentPopCultureQuestionIndex = 0;
 let score = 0;
 
 //EVENT LISTENERS
@@ -337,10 +331,24 @@ function closeModal() {
 	modalContainer.style.display = 'none';
 }
 
+//Return to beginning for all categories
+function returnToHomePage() {
+	//code for return to category homepage by hiding container
+	questionsContainer.style.display = 'none';
+	scoreCounter.style.display = 'block';
+	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
+}
+
+//put the score counter back to zero
+function resetScoreCounter() {
+	score = 0;
+}
+
 //Music Category
 
 //Start function for  music category
 function startMusicGame() {
+	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentMusicQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
@@ -380,6 +388,24 @@ function displayMusicQuestion() {
 		'style',
 		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
 	);
+	choiceABtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceABtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceBBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceBBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceCBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceCBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
 }
 
 function checkMusicAnswer(event) {
@@ -402,18 +428,11 @@ function checkMusicAnswer(event) {
 	}
 }
 
-//Return to beginning
-function returnToHomePage() {
-	//code for return to category homepage by hiding container
-	questionsContainer.style.display = 'none';
-	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
-}
-
 //Sports Trivia Game
 
-//Start function for sports categories
+//Start function for sports category
 function startSportsGame() {
+	resetScoreCounter();
 	questionsContainer.style.display = 'block';
 	currentSportsQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
@@ -454,6 +473,24 @@ function displaySportsQuestion() {
 		'style',
 		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
 	);
+	choiceABtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceABtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceBBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceBBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceCBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceCBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
 }
 
 //Check Sports Question
@@ -479,15 +516,16 @@ function checkSportsAnswer(event) {
 }
 
 //Art Trivia
-//Start function for art categories
+//Start function for art category
 function startArtGame() {
+	resetScoreCounter();
 	questionsContainer.style.display = 'block';
-	currentQuestionIndex = 0;
+	currentArtQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
 	displayArtQuestion();
 }
 
-//Display Sports Category
+//Display Art Category
 function displayArtQuestion() {
 	//display question
 	let trivia = artQuestions[currentArtQuestionIndex];
@@ -521,6 +559,24 @@ function displayArtQuestion() {
 		'style',
 		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
 	);
+	choiceABtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceABtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceBBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceBBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceCBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceCBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
 }
 
 //Check Art Question
@@ -543,10 +599,11 @@ function checkArtAnswer(event) {
 }
 
 //History Trivia
-//Start function for history categories
+//Start function for history category
 function startHistoryGame() {
+	resetScoreCounter();
 	questionsContainer.style.display = 'block';
-	currentQuestionIndex = 0;
+	currentHistoryQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
 	displayHistoryQuestion();
 }
@@ -585,6 +642,24 @@ function displayHistoryQuestion() {
 		'style',
 		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
 	);
+	choiceABtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceABtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceBBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceBBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceCBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceCBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
 }
 
 //Check history Question
@@ -610,10 +685,11 @@ function checkHistoryAnswer(event) {
 }
 
 //Science Trivia
-//Start function for science categories
+//Start function for science category
 function startScienceGame() {
+	resetScoreCounter();
 	questionsContainer.style.display = 'block';
-	currentQuestionIndex = 0;
+	currentScienceQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
 	displayScienceQuestion();
 }
@@ -652,6 +728,24 @@ function displayScienceQuestion() {
 		'style',
 		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
 	);
+	choiceABtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceABtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceBBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceBBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceCBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceCBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
 }
 
 //Check Science Question
@@ -678,15 +772,16 @@ function checkScienceAnswer(event) {
 
 //Pop! Culture Trivia
 
-//Start function for sports categories
+//Start function for Pop Culture category
 function startPopCultureGame() {
+	resetScoreCounter();
 	questionsContainer.style.display = 'block';
-	currentQuestionIndex = 0;
+	currentPopCultureQuestionIndex = 0;
 	scoreUpdater.innerHTML = '0 of 5 questions';
 	displayPopCultureQuestion();
 }
 
-//Display PopCulture Category
+//Display Pop Culture Category
 function displayPopCultureQuestion() {
 	//display question
 	let trivia = popCultureQuestions[currentPopCultureQuestionIndex];
@@ -720,6 +815,24 @@ function displayPopCultureQuestion() {
 		'style',
 		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
 	);
+	choiceABtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceABtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceBBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceBBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
+	choiceCBtn.addEventListener('mouseover', (event) => {
+		event.target.style.backgroundColor = '#8aa29e';
+	});
+	choiceCBtn.addEventListener('mouseleave', (event) => {
+		event.target.style.backgroundColor = '#db5461';
+	});
 }
 
 //Check Pop Culture Question
