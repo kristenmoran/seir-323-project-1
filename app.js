@@ -292,12 +292,11 @@ let previousScienceQuestionIndex = scienceQuestions.length - 1;
 let previousPopCultureQuestionIndex = popCultureQuestions.length - 1;
 let currentMusicQuestionIndex = 0;
 let currentSportsQuestionIndex = 0;
+let currentArtQuestionIndex = 0;
+let currentHistoryQuestionIndex = 0;
+let currentScienceQuestionIndex = 0;
+let currentPopCultureQuestionIndex = 0;
 let score = 0;
-
-//answer buttons
-let choiceABtn = document.querySelector('#A');
-let choiceBBtn = document.querySelector('#B');
-let choiceCBtn = document.querySelector('#C');
 
 //EVENT LISTENERS
 
@@ -311,51 +310,21 @@ closeModalBtn.addEventListener('click', closeModal);
 music.addEventListener('click', startMusicGame);
 
 //Sports Start
-// sports.addEventListener('click', startSportsGame);
+sports.addEventListener('click', startSportsGame);
 
-// //Art Start
-// art.addEventListener('click', startArtGame);
+//Art Start
+art.addEventListener('click', startArtGame);
 
-// //History Start
-// history.addEventListener('click', startHistoryGame);
+//History Start
+history.addEventListener('click', startHistoryGame);
 
-// //Science Start
-// science.addEventListener('click', startScienceGame);
+//Science Start
+science.addEventListener('click', startScienceGame);
 
-// //Pop! Culture Start
-// popCulture.addEventListener('click', startPopCultureGame);
+//Pop! Culture Start
+popCulture.addEventListener('click', startPopCultureGame);
 
 //Trivia Logic
-
-//Music
-choiceABtn.addEventListener('click', checkMusicAnswer);
-choiceBBtn.addEventListener('click', checkMusicAnswer);
-choiceCBtn.addEventListener('click', checkMusicAnswer);
-
-//Sports
-// choiceABtn.addEventListener('click', checkSportsAnswer);
-// choiceBBtn.addEventListener('click', checkSportsAnswer);
-// choiceCBtn.addEventListener('click', checkSportsAnswer);
-
-// //Art
-// choiceABtn.addEventListener('click', checkArtAnswer);
-// choiceBBtn.addEventListener('click', checkArtAnswer);
-// choiceCBtn.addEventListener('click', checkArtAnswer);
-
-// //History
-// choiceABtn.addEventListener('click', checkHistoryAnswer);
-// choiceBBtn.addEventListener('click', checkHistoryAnswer);
-// choiceCBtn.addEventListener('click', checkHistoryAnswer);
-
-// //Science
-// choiceABtn.addEventListener('click', checkScienceAnswer);
-// choiceBBtn.addEventListener('click', checkScienceAnswer);
-// choiceCBtn.addEventListener('click', checkScienceAnswer);
-
-// //Pop! Culture
-// choiceABtn.addEventListener('click', checkPopCultureAnswer);
-// choiceBBtn.addEventListener('click', checkPopCultureAnswer);
-// choiceCBtn.addEventListener('click', checkPopCultureAnswer);
 
 //FUNCTIONS
 
@@ -368,7 +337,9 @@ function closeModal() {
 	modalContainer.style.display = 'none';
 }
 
-//Start function for all trivia categories
+//Music Category
+
+//Start function for  music category
 function startMusicGame() {
 	questionsContainer.style.display = 'block';
 	currentMusicQuestionIndex = 0;
@@ -376,21 +347,46 @@ function startMusicGame() {
 	displayMusicQuestion();
 }
 
-//Music Category
 function displayMusicQuestion() {
 	//display question
 	let trivia = musicQuestions[currentMusicQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
+	let choiceABtn = document.createElement('BUTTON');
+	let choiceBBtn = document.createElement('BUTTON');
+	let choiceCBtn = document.createElement('BUTTON');
+	questionDisplay.appendChild(choiceABtn);
+	questionDisplay.appendChild(choiceBBtn);
+	questionDisplay.appendChild(choiceCBtn);
+	choiceABtn.setAttribute('id', 'A');
+	choiceBBtn.setAttribute('id', 'B');
+	choiceCBtn.setAttribute('id', 'C');
+	choiceABtn.addEventListener('click', checkMusicAnswer);
+	choiceBBtn.addEventListener('click', checkMusicAnswer);
+	choiceCBtn.addEventListener('click', checkMusicAnswer);
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
+	choiceABtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceBBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceCBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
 }
 
 function checkMusicAnswer(event) {
 	//targeting the event and id from HTML
-	if (event.target.id === musicQuestions[currentMusicQuestionIndex].correctAnswer) {
+	if (
+		event.target.id === musicQuestions[currentMusicQuestionIndex].correctAnswer
+	) {
 		//answer is correct
 		score++;
 		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
@@ -414,7 +410,6 @@ function returnToHomePage() {
 	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
 }
 
-/*
 //Sports Trivia Game
 
 //Start function for sports categories
@@ -432,15 +427,42 @@ function displaySportsQuestion() {
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
+	let choiceABtn = document.createElement('BUTTON');
+	let choiceBBtn = document.createElement('BUTTON');
+	let choiceCBtn = document.createElement('BUTTON');
+	questionDisplay.appendChild(choiceABtn);
+	questionDisplay.appendChild(choiceBBtn);
+	questionDisplay.appendChild(choiceCBtn);
+	choiceABtn.setAttribute('id', 'A');
+	choiceBBtn.setAttribute('id', 'B');
+	choiceCBtn.setAttribute('id', 'C');
+	choiceABtn.addEventListener('click', checkSportsAnswer);
+	choiceBBtn.addEventListener('click', checkSportsAnswer);
+	choiceCBtn.addEventListener('click', checkSportsAnswer);
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
+	choiceABtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceBBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceCBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
 }
 
 //Check Sports Question
 function checkSportsAnswer(event) {
 	//targeting the event and id from HTML
-	if (event.target.id === sportsQuestions[currentSportsQuestionIndex].correctAnswer) {
+	if (
+		event.target.id ===
+		sportsQuestions[currentSportsQuestionIndex].correctAnswer
+	) {
 		//answer is correct
 		score++;
 		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
@@ -456,15 +478,6 @@ function checkSportsAnswer(event) {
 	}
 }
 
-//Return to beginning
-function returnToHomePage() {
-	//code for return to category homepage by hiding container
-	questionsContainer.style.display = 'none';
-	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
-}
-
-/*
 //Art Trivia
 //Start function for art categories
 function startArtGame() {
@@ -477,19 +490,43 @@ function startArtGame() {
 //Display Sports Category
 function displayArtQuestion() {
 	//display question
-	let trivia = artQuestions[currentQuestionIndex];
+	let trivia = artQuestions[currentArtQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
+	let choiceABtn = document.createElement('BUTTON');
+	let choiceBBtn = document.createElement('BUTTON');
+	let choiceCBtn = document.createElement('BUTTON');
+	questionDisplay.appendChild(choiceABtn);
+	questionDisplay.appendChild(choiceBBtn);
+	questionDisplay.appendChild(choiceCBtn);
+	choiceABtn.setAttribute('id', 'A');
+	choiceBBtn.setAttribute('id', 'B');
+	choiceCBtn.setAttribute('id', 'C');
+	choiceABtn.addEventListener('click', checkArtAnswer);
+	choiceBBtn.addEventListener('click', checkArtAnswer);
+	choiceCBtn.addEventListener('click', checkArtAnswer);
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
+	choiceABtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceBBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceCBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
 }
 
-//Check Sports Question
+//Check Art Question
 function checkArtAnswer(event) {
 	//targeting the event and id from HTML
-	if (event.target.id === artQuestions[currentQuestionIndex].correctAnswer) {
+	if (event.target.id === artQuestions[currentArtQuestionIndex].correctAnswer) {
 		//answer is correct
 		score++;
 		scoreUpdater.innerHTML = `Correct! You have ${score} of 5 correct`;
@@ -497,20 +534,12 @@ function checkArtAnswer(event) {
 		//answer is wrong
 		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
-	if (currentQuestionIndex < previousQuestionIndex) {
-		currentQuestionIndex++;
+	if (currentArtQuestionIndex < previousArtQuestionIndex) {
+		currentArtQuestionIndex++;
 		displayArtQuestion();
 	} else {
 		returnToHomePage();
 	}
-}
-
-//Return to beginning
-function returnToHomePage() {
-	//code for return to category homepage by hiding container
-	questionsContainer.style.display = 'none';
-	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
 }
 
 //History Trivia
@@ -525,20 +554,45 @@ function startHistoryGame() {
 //Display history Category
 function displayHistoryQuestion() {
 	//display question
-	let trivia = historyQuestions[currentQuestionIndex];
+	let trivia = historyQuestions[currentHistoryQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
+	let choiceABtn = document.createElement('BUTTON');
+	let choiceBBtn = document.createElement('BUTTON');
+	let choiceCBtn = document.createElement('BUTTON');
+	questionDisplay.appendChild(choiceABtn);
+	questionDisplay.appendChild(choiceBBtn);
+	questionDisplay.appendChild(choiceCBtn);
+	choiceABtn.setAttribute('id', 'A');
+	choiceBBtn.setAttribute('id', 'B');
+	choiceCBtn.setAttribute('id', 'C');
+	choiceABtn.addEventListener('click', checkHistoryAnswer);
+	choiceBBtn.addEventListener('click', checkHistoryAnswer);
+	choiceCBtn.addEventListener('click', checkHistoryAnswer);
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
+	choiceABtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceBBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceCBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
 }
 
 //Check history Question
 function checkHistoryAnswer(event) {
 	//targeting the event and id from HTML
 	if (
-		event.target.id === historyQuestions[currentQuestionIndex].correctAnswer
+		event.target.id ===
+		historyQuestions[currentHistoryQuestionIndex].correctAnswer
 	) {
 		//answer is correct
 		score++;
@@ -547,20 +601,12 @@ function checkHistoryAnswer(event) {
 		//answer is wrong
 		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
-	if (currentQuestionIndex < previousQuestionIndex) {
-		currentQuestionIndex++;
+	if (currentHistoryQuestionIndex < previousHistoryQuestionIndex) {
+		currentHistoryQuestionIndex++;
 		displayHistoryQuestion();
 	} else {
 		returnToHomePage();
 	}
-}
-
-//Return to beginning
-function returnToHomePage() {
-	//code for return to category homepage by hiding container
-	questionsContainer.style.display = 'none';
-	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
 }
 
 //Science Trivia
@@ -575,20 +621,45 @@ function startScienceGame() {
 //Display Science Category
 function displayScienceQuestion() {
 	//display question
-	let trivia = scienceQuestions[currentQuestionIndex];
+	let trivia = scienceQuestions[currentScienceQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
+	let choiceABtn = document.createElement('BUTTON');
+	let choiceBBtn = document.createElement('BUTTON');
+	let choiceCBtn = document.createElement('BUTTON');
+	questionDisplay.appendChild(choiceABtn);
+	questionDisplay.appendChild(choiceBBtn);
+	questionDisplay.appendChild(choiceCBtn);
+	choiceABtn.setAttribute('id', 'A');
+	choiceBBtn.setAttribute('id', 'B');
+	choiceCBtn.setAttribute('id', 'C');
+	choiceABtn.addEventListener('click', checkScienceAnswer);
+	choiceBBtn.addEventListener('click', checkScienceAnswer);
+	choiceCBtn.addEventListener('click', checkScienceAnswer);
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
+	choiceABtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceBBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceCBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
 }
 
 //Check Science Question
 function checkScienceAnswer(event) {
 	//targeting the event and id from HTML
 	if (
-		event.target.id === scienceQuestions[currentQuestionIndex].correctAnswer
+		event.target.id ===
+		scienceQuestions[currentScienceQuestionIndex].correctAnswer
 	) {
 		//answer is correct
 		score++;
@@ -597,20 +668,12 @@ function checkScienceAnswer(event) {
 		//answer is wrong
 		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
-	if (currentQuestionIndex < previousQuestionIndex) {
-		currentQuestionIndex++;
+	if (currentScienceQuestionIndex < previousScienceQuestionIndex) {
+		currentScienceQuestionIndex++;
 		displayScienceQuestion();
 	} else {
 		returnToHomePage();
 	}
-}
-
-//Return to beginning
-function returnToHomePage() {
-	//code for return to category homepage by hiding container
-	questionsContainer.style.display = 'none';
-	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
 }
 
 //Pop! Culture Trivia
@@ -626,20 +689,45 @@ function startPopCultureGame() {
 //Display PopCulture Category
 function displayPopCultureQuestion() {
 	//display question
-	let trivia = popCultureQuestions[currentQuestionIndex];
+	let trivia = popCultureQuestions[currentPopCultureQuestionIndex];
 	trivia.innerHTML = document.createElement('div');
 	questionDisplay.innerHTML = trivia.question;
 	//add buttons
+	let choiceABtn = document.createElement('BUTTON');
+	let choiceBBtn = document.createElement('BUTTON');
+	let choiceCBtn = document.createElement('BUTTON');
+	questionDisplay.appendChild(choiceABtn);
+	questionDisplay.appendChild(choiceBBtn);
+	questionDisplay.appendChild(choiceCBtn);
+	choiceABtn.setAttribute('id', 'A');
+	choiceBBtn.setAttribute('id', 'B');
+	choiceCBtn.setAttribute('id', 'C');
+	choiceABtn.addEventListener('click', checkPopCultureAnswer);
+	choiceBBtn.addEventListener('click', checkPopCultureAnswer);
+	choiceCBtn.addEventListener('click', checkPopCultureAnswer);
 	choiceABtn.innerHTML = trivia.choiceA;
 	choiceBBtn.innerHTML = trivia.choiceB;
 	choiceCBtn.innerHTML = trivia.choiceC;
+	choiceABtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceBBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
+	choiceCBtn.setAttribute(
+		'style',
+		'padding: 15px 18px; margin 25px auto; background-color: #db5461; border: none; outline: none; border-radius: 10px; color: white; font-family: Sources Sans Pro, sans-serif; cursor: pointer; text-decoration: none; font-size: 26px; flex-wrap: nowrap; flex-direction: column;'
+	);
 }
 
 //Check Pop Culture Question
 function checkPopCultureAnswer(event) {
 	//targeting the event and id from HTML
 	if (
-		event.target.id === popCultureQuestions[currentQuestionIndex].correctAnswer
+		event.target.id ===
+		popCultureQuestions[currentPopCultureQuestionIndex].correctAnswer
 	) {
 		//answer is correct
 		score++;
@@ -648,19 +736,10 @@ function checkPopCultureAnswer(event) {
 		//answer is wrong
 		scoreUpdater.innerHTML = `Incorrect! You have ${score} of 5 correct`;
 	}
-	if (currentQuestionIndex < previousQuestionIndex) {
-		currentQuestionIndex++;
+	if (currentPopCultureQuestionIndex < previousPopCultureQuestionIndex) {
+		currentPopCultureQuestionIndex++;
 		displayPopCultureQuestion();
 	} else {
 		returnToHomePage();
 	}
 }
-
-//Return to beginning
-function returnToHomePage() {
-	//code for return to category homepage by hiding container
-	questionsContainer.style.display = 'none';
-	scoreCounter.style.display = 'block';
-	scoreCounter.innerHTML = `You got ${score} of 5 correct!`;
-}
-*/

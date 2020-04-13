@@ -105,6 +105,8 @@ button {
 	text-align: center;
 	font-size: 25px;
 	color: black;
+	margin: 300px auto;
+	border: 300px; 
 }
 
 #score-counter {
