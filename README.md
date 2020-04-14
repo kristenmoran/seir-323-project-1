@@ -8,7 +8,7 @@ You can use this trivia game to have fun and test your own knowledge, or build u
 
 The problem this project solves is that a lot of trivia games usually focus on one topic. I wanted to give my users a chance to shine in their preferred category or have them see how far they could go in a subject they are not too familiar with.
 
-[Play the Game here: https://kristenmoran.github.io/seir-323-project-1/]
+[Play the Game here](https://kristenmoran.github.io/seir-323-project-1/)
 
 ## Example
 
@@ -56,5 +56,5 @@ Install seir-323-project-1 by:
 
 ## Contribute
 
-[Source Code : https://github.com/kristenmoran/seir-323-project-1]
-[Issue Tracker : https://github.com/kristenmoran/seir-323-project-1/issues]
+[Source Code](https://github.com/kristenmoran/seir-323-project-1)
+[Issue Tracker](https://github.com/kristenmoran/seir-323-project-1/issues)
