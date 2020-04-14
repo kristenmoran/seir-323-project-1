@@ -41,7 +41,8 @@ Gold Features
 
 I completed my Silver Category. My goal is to eventually add a timer and refactor the code.
 
-##Issues/Hurdles
+## Issues/Hurdles
+
 Some of the hurdles that I overcame was choosing how to format my questions and answers in Javascript as well as having the buttons identify when a correct answer was chosen. 
 
 I formatted my questions and answer options by putting each question, with its options as an object in an array. By choosing this method, I also had a key:value pair called correctAnswer. I then assigned the answer buttons an id of A, B, or C. I then wrote a function that targeted the event by id and if it matched with the correctAnswer then user chose the correct answer. 
