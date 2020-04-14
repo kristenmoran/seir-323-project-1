@@ -319,7 +319,7 @@ science.addEventListener('click', startScienceGame);
 popCulture.addEventListener('click', startPopCultureGame);
 
 //Exit Game before questions are done
-questionsContainer.addEventListener('click', returnToHomePage);
+// questionsContainer.addEventListener('click', returnToHomePage);
 
 //FUNCTIONS
 
