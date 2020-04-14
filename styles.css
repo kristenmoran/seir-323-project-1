@@ -36,6 +36,7 @@ button {
 .categories:hover {
 	color: #fafafa;
 	background-color: #8aa29e;
+	cursor: pointer;
 }
 
 #question-container {
@@ -86,7 +87,6 @@ button {
 	display: none;
 	position: relative;
 }
-
 
 /* Modal styling */
 
