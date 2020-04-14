@@ -57,4 +57,5 @@ Install seir-323-project-1 by:
 ## Contribute
 
 [Source Code](https://github.com/kristenmoran/seir-323-project-1)
+
 [Issue Tracker](https://github.com/kristenmoran/seir-323-project-1/issues)
