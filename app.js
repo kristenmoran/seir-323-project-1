@@ -318,8 +318,8 @@ science.addEventListener('click', startScienceGame);
 //Pop! Culture Start
 popCulture.addEventListener('click', startPopCultureGame);
 
-//Exit Game before questions are done
-// questionsContainer.addEventListener('click', returnToHomePage);
+//
+questionsContainer.addEventListener('click', closeOutOfTrivia);
 
 //FUNCTIONS
 
@@ -343,6 +343,17 @@ function returnToHomePage() {
 //put the score counter back to zero
 function resetScoreCounter() {
 	score = 0;
+}
+
+// Close out of the game
+
+function closeOutOfTrivia(event) {
+	if (event.target === questionsContainer || event.target === answerBtns) {
+		questionsContainer.style.display = 'none';
+		score = 0;
+	} else {
+		return true;
+	}
 }
 
 //Music Category
