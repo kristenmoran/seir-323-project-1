@@ -10,7 +10,11 @@ The problem this project solves is that a lot of trivia games usually focus on o
 
 ## Example
 
+Trivia Game in Browser
+
 ![triviaAppRender](imgs/Trivia-Game-Render.png)
+
+Gameplay 
 
 ![inGamePlay](imgs/In-Game-Play.png)
 
