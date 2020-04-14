@@ -17,21 +17,6 @@ h2 {
 	text-align: center;
 }
 
-/* for if i can figure out how to put three in a row with two columns
-
-div#music, div#sports, div#art {
-    flex-direction: column;
-    border: #db5461 2px solid;
-    height: 100%;
-    width: 100%
-}
-
-div#history, div#science, div#pop-culture {
-    flex-wrap: wrap;
-    flex-direction: row;
-    border: #db5461 2px solid;
-} */
-
 button {
 	display: flex;
 	text-align: center;
@@ -71,7 +56,7 @@ button {
 	background-color: #e3f2fd;
 	font-family: 'Source Sans Pro', sans-serif;
 	height: 450px;
-	width: 600px;
+	width: 650px;
 	border-radius: 2px;
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 	padding: 10px;
@@ -79,32 +64,13 @@ button {
 	line-height: 120%;
 }
 
-.btn {
-	padding: 15px 18px;
-	margin: 25px, auto;
-	background-color: #db5461;
-	border: none;
-	outline: none;
-	border-radius: 10px;
-	color: white;
-	font-family: 'Source Sans Pro', sans-serif;
-	cursor: pointer;
-	text-decoration: none;
-	font-size: 26px;
-	flex-wrap: nowrap;
-	flex-direction: column;
-}
-
-.btn:hover {
-	color: #fafafa;
-	background-color: #8aa29e;
-}
-
 .score-updater {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-align: center;
 	font-size: 25px;
 	color: black;
+	margin: 300px auto;
+	border: 300px;
 }
 
 #score-counter {
@@ -120,6 +86,7 @@ button {
 	display: none;
 	position: relative;
 }
+
 
 /* Modal styling */
 
@@ -171,9 +138,11 @@ button {
 	padding-top: 15px;
 }
 
+/* Footer styling */
+
 footer {
 	background-color: #e3f2fd;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	margin-top: 100px;
 	height: 95px;
@@ -193,4 +162,31 @@ p {
 
 .contact {
 	color: #db5461;
+}
+
+@media only screen and (max-width: 768px) {
+	#question-display {
+		width: 100%;
+		padding: 10px;
+		margin: 150px auto;
+	}
+	#instructions-text {
+		height: 350px;
+		width: 650px;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	#question-display {
+		width: 350px;
+		height: 550px;
+		padding: 10px;
+		margin: 150px auto;
+	}
+	#instructions-text {
+		height: 350px;
+		width: 350px;
+		padding: 10px;
+		margin: 150px auto;
+	}
 }
