@@ -41,6 +41,13 @@ Gold Features
 
 I completed my Silver Category. My goal is to eventually add a timer and refactor the code.
 
+##Issues/Hurdles
+Some of the hurdles that I overcame was choosing how to format my questions and answers in Javascript as well as having the buttons identify when a correct answer was chosen. 
+
+I formatted my questions and answer options by putting each question, with its options as an object in an array. By choosing this method, I also had a key:value pair called correctAnswer. I then assigned the answer buttons an id of A, B, or C. I then wrote a function that targeted the event by id and if it matched with the correctAnswer then user chose the correct answer. 
+
+Most of my question display also was created through DOM manipulation. This took awhile to figure out because I initially hardcoded the buttons in my HTML. However, during my test runs, questions from other categories would be displayed in a different category. Instead of targeting the buttons outside of the displayCategoryQuestion function, I dedcided to use a local scope for the buttons and use DOM manipulation to create the desired result. And it worked!
+
 ## Technologies Used
 
 - HTML 5, CSS 3, JavaScript
