@@ -1,192 +1,195 @@
+/* In general, I'd not recommend using tag selectors (e.g., h1) to target elements for styling purposes because tag selectors are not specific enough and can easily get overridden. Just stick with class selectors instead. Here are some reasons why: https://frontstuff.io/you-need-to-stop-targeting-tags-in-css*/
+
 body {
-	background-position: center;
-	background-color: #fafafa;
-	padding: 0;
-	margin: 0;
-	justify-content: center;
-	align-items: center;
+  background-position: center;
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-	font-family: 'Cabin', sans-serif;
-	text-align: center;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
 }
 
 h2 {
-	font-family: 'Cabin', sans-serif;
-	text-align: center;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
 }
 
 button {
-	display: flex;
-	text-align: center;
-	margin: 30px auto;
+  display: flex;
+  text-align: center;
+  margin: 30px auto;
 }
 
 .categories {
-	font-family: 'Cabin', sans-serif;
-	text-align: center;
-	font-size: 26px;
-	margin: 15px auto;
-	border: #8aa29e solid 2px;
-	width: 350px;
-	border-radius: 10px;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+  font-size: 26px;
+  margin: 15px auto;
+  border: #8aa29e solid 2px;
+  width: 350px;
+  border-radius: 10px;
 }
 
 .categories:hover {
-	color: #fafafa;
-	background-color: #8aa29e;
-	cursor: pointer;
+  color: #fafafa;
+  background-color: #8aa29e;
+  cursor: pointer;
 }
 
 #question-container {
-	background-color: rgba(0, 0, 0, 0.4);
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	/* put modal in front of the body. */
-	z-index: 1;
-	/* if overflow is clipped, a scroll-bar is added to see content */
-	overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* put modal in front of the body. */
+  z-index: 1;
+  /* if overflow is clipped, a scroll-bar is added to see content */
+  overflow: auto;
 }
 
 #question-display {
-	background-color: #e3f2fd;
-	font-family: 'Source Sans Pro', sans-serif;
-	height: 450px;
-	width: 650px;
-	border-radius: 2px;
-	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-	padding: 10px;
-	margin: 150px auto;
-	line-height: 120%;
+  background-color: #e3f2fd;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 450px;
+  width: 650px;
+  border-radius: 2px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 150px auto;
+  line-height: 120%;
 }
 
 .score-updater {
-	font-family: 'Source Sans Pro', sans-serif;
-	text-align: center;
-	font-size: 25px;
-	color: black;
-	margin: 300px auto;
-	border: 300px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-size: 25px;
+  color: black;
+  margin: 300px auto;
+  border: 300px;
 }
 
 #score-counter {
-	background-color: #e3f2fd;
-	font-family: 'Source Sans Pro', sans-serif;
-	height: 50px;
-	width: 350px;
-	border-radius: 5px;
-	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-	padding: 10px;
-	margin: 35px auto;
-	line-height: 120%;
-	display: none;
-	position: relative;
+  background-color: #e3f2fd;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 50px;
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 35px auto;
+  line-height: 120%;
+  display: none;
+  position: relative;
 }
 
 /* Modal styling */
 
 #openModal {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 #modal-container {
-	background-color: rgba(0, 0, 0, 0.4);
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	/* put modal in front of the body. */
-	z-index: 1;
-	/* if overflow is clipped, a scroll-bar is added to see content */
-	overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* put modal in front of the body. */
+  z-index: 1;
+  /* if overflow is clipped, a scroll-bar is added to see content */
+  overflow: auto;
 }
 
 #instructions-text {
-	background-color: #e3f2fd;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 20px;
-	height: 300px;
-	width: 550px;
-	border-radius: 2px;
-	box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-	padding: 10px;
-	margin: 150px auto;
-	line-height: 120%;
+  background-color: #e3f2fd;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  height: 300px;
+  width: 550px;
+  border-radius: 2px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 150px auto;
+  line-height: 120%;
 }
 
 .modal-buttons {
-	padding: 15px 18px;
-	background-color: #db5461;
-	border: none;
-	outline: none;
-	border-radius: 7px;
-	color: #fafafa;
-	font-family: 'Source Sans Pro', sans-serif;
-	cursor: pointer;
-	text-decoration: none;
+  padding: 15px 18px;
+  background-color: #db5461;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  color: #fafafa;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #modal-footer {
-	text-align: right;
-	padding-top: 15px;
+  text-align: right;
+  padding-top: 15px;
 }
 
 /* Footer styling */
 
 footer {
-	background-color: #e3f2fd;
-	position: fixed;
-	bottom: 0;
-	margin-top: 100px;
-	height: 95px;
-	padding: 20px;
-	width: 100%;
-	clear: both;
-	border: #8aa29e 3px solid;
+  background-color: #e3f2fd;
+  position: fixed;
+  bottom: 0;
+  margin-top: 100px;
+  height: 95px;
+  padding: 20px;
+  width: 100%;
+  clear: both;
+  border: #8aa29e 3px solid;
 }
 
 p {
-	color: #db5461;
-	font-family: 'Source Sans Pro', sans-serif;
-	text-align: left;
-	font-size: 20px;
-	margin-top: 10px;
+  color: #db5461;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .contact {
-	color: #db5461;
+  color: #db5461;
 }
 
+/* Hou comment: Nice job with these media queries! */
 @media only screen and (max-width: 768px) {
-	#question-display {
-		width: 100%;
-		padding: 10px;
-		margin: 150px auto;
-	}
-	#instructions-text {
-		height: 350px;
-		width: 650px;
-	}
+  #question-display {
+    width: 100%;
+    padding: 10px;
+    margin: 150px auto;
+  }
+  #instructions-text {
+    height: 350px;
+    width: 650px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
-	#question-display {
-		width: 350px;
-		height: 550px;
-		padding: 10px;
-		margin: 150px auto;
-	}
-	#instructions-text {
-		height: 350px;
-		width: 350px;
-		padding: 10px;
-		margin: 150px auto;
-	}
+  #question-display {
+    width: 350px;
+    height: 550px;
+    padding: 10px;
+    margin: 150px auto;
+  }
+  #instructions-text {
+    height: 350px;
+    width: 350px;
+    padding: 10px;
+    margin: 150px auto;
+  }
 }
